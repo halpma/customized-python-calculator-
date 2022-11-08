@@ -8,7 +8,8 @@ Im desining a calculator for a younger age group (5-7 years old) that will be si
 Oliver Holmes
 
 ### The Design
-All buttons have a white background
+All buttons have a light grey background
 Operation buttons are spelt out instead of being their symbols 
 Background is a bright yellow 
 grey bar at top displays operations
+numbers are all black so that you can see them all with the light grey backround 
