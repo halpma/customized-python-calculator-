@@ -14,8 +14,8 @@ def button_press(num):    # defining each button press
 
     equation_label.set(equation_text)
 
-def equals():
-    global equation_text 
+def equals():       # the equals sing
+    global equation_text    
     
     try:
         total = str(eval(equation_text))
@@ -24,7 +24,7 @@ def equals():
 
         equation_text = total
 
-    except SyntaxError:
+    except SyntaxError:        # If calculation dosent make sense or dosent work
 
         equation_text.set("syntax error")
 
@@ -36,7 +36,7 @@ def equals():
 
         equation_text = ""
 
-def clear():
+def clear():             # The clear button clears the sum on the display
     global equation_text 
 
     equation_label.set("")
@@ -48,8 +48,8 @@ def clear():
 
 window = Tk()
 window.title("Python Calculator")
-window.geometry("500x500")
-window.configure(bg="#c9f6ff")
+window.geometry("500x625")
+window.configure(bg="#ffda00")
 
 equation_text = ""
 
@@ -57,6 +57,10 @@ equation_label = StringVar()
 
 label = Label(window, textvariable=equation_label, font=('console', 20), bg="dark grey", width=24, height=2)
 label.pack()
+
+#############################################################################################################
+# All of the numbers
+#############################################################################################################
 
 frame = Frame(window)
 frame.pack()
@@ -89,35 +93,21 @@ button9 = Button(frame, text=9, height=4, width =9, font=35, command=lambda: but
 button9.grid(row=2, column=2)
 
 button0 = Button(frame, text=0, height=4, width =9, font=35, command=lambda: button_press(0))
-button0.grid(row=3, column=0)
+button0.grid(row=3, column=1)
 
 # create operation buttons
 
-plus = Button(frame, text='+                        Plus', height=4, width =9, font=35, command=lambda: button_press('+'))
-plus.grid(row=0, column=4)
-
-minus = Button(frame, text='-', height=4, width =9, font=35, command=lambda: button_press('-'))
-minus.grid(row=1, column=4)
-
-multiply = Button(frame, text='*', height=4, width =9, font=35, command=lambda: button_press('*'))
-multiply.grid(row=2, column=4)
-
-divide = Button(frame, text='/', height=4, width =9, font=35, command=lambda: button_press('/'))
-divide.grid(row=3, column=4)
+plus = Button(frame, text='PLUS', height=4, width =9, font=35, command=lambda: button_press('+'))
+plus.grid(row=3, column=2)
 
 # create equal button
 
-equal = Button(frame, text='=', height=4, width =9, font=35, command=equals)
-equal.grid(row=3, column=2)
-
-# create the decimal button
-
-decimal = Button(frame, text='.', height=4, width =9, font=50, command=lambda: button_press('.'))
-decimal.grid(row=3, column=1)
+equal = Button(frame, text='EQUALS', height=4, width =9, font=35, command=equals)
+equal.grid(row=3, column=0)
 
 # create clear button
 
-clear = Button(window, text='clear', height=4, width =12, font=35, command=clear)
+clear = Button(window, text='New Sum', height=4, width =12, font=35, command=clear)
 clear.pack()
 
 
